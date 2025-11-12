@@ -34,23 +34,23 @@ Build a working PoC
 
 ### Week 1 (ends Oct 31)
 
-**Goals:** Do preliminary research, rite a spec, start on the ERC1155 option minting contract
+**Goals:** Do preliminary research, write a spec
 
-**Progress Summary:**  Did preliminary research, Writing a spec
+**Progress Summary:**  Research and spec completed
 
 
 ### Week 2 (ends Nov 7)
 
-**Goals:** Option + CLOB smart contract logic
+**Goals:** Option + CLOB smart contract public interface
  
-**Progress Summary:**  
+**Progress Summary:** Pivoted to American over European options. Implemented the public interface
 
 
 ### 🗓️ Week 3 (ends Nov 14)
 
-**Goals:** UI + liquidity bootstrapping considerations
+**Goals:** Contract implementation and basic frontend
 
-**Progress Summary:**  
+**Progress Summary:**  Working on the contract implementations
 
 
 
