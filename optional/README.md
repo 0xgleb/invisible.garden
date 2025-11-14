@@ -7,7 +7,7 @@ You’ll update your progress weekly **in the same PR**, so mentors and reviewer
 
 ##  Project Title
 
-_Optional_
+**Optional** - the options protocol
 
 ## Team
 
@@ -19,12 +19,15 @@ _Optional_
 
 ## Project Description
 
-Optional is a fully on-chain Central Limit Order Book (CLOB) for options trading. The design prioritizes simplicity and reliability through physical settlement with 100% collateralization, eliminating the need for oracles, risk management systems, and liquidati on mechanisms in the initial version. Options buyers get leverage or insurance for their positions while option sellers collect premia.
+Optional is a fully on-chain options protocol. The design prioritizes simplicity and reliability through physical settlement with 100% collateralization, eliminating the need for oracles, risk management systems, and liquidation mechanisms in the initial version. Options buyers get leverage or insurance for their positions while option sellers collect premia.
+
+Each option series is an ERC20 token. These tokens are minted when option writers deposit collateral (underlying for calls or quote token for puts) to an ERC-4626 vault for the particular option series. Vault shares essentially represent short option, long base/quote exposure (for call/put respectively). The options are American-style, meaning they can be exercised atomically at any time prior to maturity, which allows for cash settlement via flash loans.
 
 ## Tech Stack
 
-- Smart contracts in Rust using Arbitrum Stylus SDK
-- Svelte 5 TypeScript FE
+- Rust
+- Arbitrum Stylus SDK
+- OpenZeppelin Stylus contracts
 
 ## Objectives
 
@@ -48,15 +51,14 @@ Build a working PoC
 
 ### 🗓️ Week 3 (ends Nov 14)
 
-**Goals:** Contract implementation and basic frontend
+**Goals:** Contract implementation
 
-**Progress Summary:**  Working on the contract implementations
-
+**Progress Summary:**  Completely reworked the spec after trying a different protocol design
 
 
 ## Final Wrap-Up
 
-_After Week 3, summarize your final state: deliverables, repo links, and outcomes._
+Working on an earlier approach to the contract design that used ERC-1155, revealed the much better alternative design. As the result the spec has undergone very significant changes rendering the initial implementation outdated. The new spec is available in the linked repo, the updated implementation is WIP.
 
 - **Main Repository Link:** [0xgleb/optional](https://github.com/0xgleb/optional)
 - **Demo / Deployment Link (if any):**  
@@ -65,14 +67,19 @@ _After Week 3, summarize your final state: deliverables, repo links, and outcome
 
 
 ## 🧾 Learnings
+
 _What did you learn or improve during ARG25?_
 
-
+With the right protocol design, you can do a lot with onchain options without needing to integrate an oracle or sophisticated risk management
 
 ## Next Steps
-_If you plan to continue development beyond ARG25, what’s next?_
 
-
+- Implement the contracts according to the new spec
+- Build an onchain CLOB (Central Limit Order Book)
+- Frontend for writing, trading, and exercising options
+- Automatic exercise at maturity
+- Cross-series collateral management to improve capital efficiency for advanced options strategies
+- Design an options market making yield product to bootstrap liquidity
 
 _This template is part of the [ARG25 Projects Repository](https://github.com/invisible-garden/arg25-projects)._  
 _Update this file weekly by committing and pushing to your fork, then raising a PR at the end of each week._
