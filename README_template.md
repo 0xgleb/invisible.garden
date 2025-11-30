@@ -13,9 +13,7 @@ _A short, descriptive name of your project._
 ## Team
 - Team/Individual Name:
 - GitHub Handles:
-
-
-
+- Devfolio Handles: 
 
 ## Project Description
 _What are you building and why does it matter? Explain the core problem and your proposed solution._
